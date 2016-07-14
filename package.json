@@ -1,0 +1,28 @@
+{
+  "name": "credit-card-utilities",
+  "version": "0.1.0",
+  "description": "A small functional library for validating and formatting Credit/Debit cards.",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "dev": "",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danbahrami/credit-card-utilities.git"
+  },
+  "keywords": [
+    "credit cards",
+    "payment",
+    "validation",
+    "formatting",
+    "javascript",
+    "js"
+  ],
+  "author": "Dan Bahrami <dan.bahrami@googlemail.com> (http://danbahrami.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
