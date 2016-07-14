@@ -1,7 +1,19 @@
-import getTemplate from "./getTemplate"
+import stripWhiteSpace from "./stripWhiteSpace"
+import templates from "./templates"
 
-export default number => {
-    const template = getTemplate(number)
+/**
+ * GetTemplate
+ * @param {string|number} number - A card number
+ * @returns {object}
+ */
+const getTemplate = number => {
+    if(!number) {
+        return null
+    }
 
-    return (template) ? template.type : null
+    number = stripWhiteSpace(number)
+
+    return templates.find((template) => template.pattern.test(number))
 }
+
+export default getTemplate
