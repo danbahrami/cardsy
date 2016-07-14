@@ -1,1 +1,7 @@
-export default value => value.toString().replace(/ /g, "")
+export default value => {
+    if(!value || typeof value.toString === "undefined") {
+        return ""
+    }
+
+    return value.toString().replace(/ /g, "")
+}

@@ -1,3 +1,7 @@
+import stripWhiteSpace from "./utils/stripWhiteSpace"
+import getTemplate from "./utils/getTemplate"
+import luhnCheck from "./utils/luhnCheck"
+
 /**
  * card.validate.number
  *
@@ -12,7 +16,26 @@
  * @returns {boolean} Is card number valid
  */
 const number = number => {
+    number = stripWhiteSpace(number)
+    const template = getTemplate(number)
 
+    // Did we find a matching template?
+    if(!template) {
+        return false
+    }
+
+    // Is the number a valid length for it's type?
+    if(template.lengths.indexOf(number.length) === -1) {
+        return false
+    }
+
+    // Does the number pass Luhn check if required?
+    if(template.luhn && !luhnCheck(number)) {
+        return false
+    }
+
+    // OK!
+    return true
 }
 
 /**
