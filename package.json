@@ -2,11 +2,10 @@
   "name": "credit-card-utilities",
   "version": "0.1.0",
   "description": "A small functional library for validating and formatting Credit/Debit cards.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "",
-    "dev": "",
-    "build": ""
+    "test": "node_modules/.bin/tape -r babel-core/register 'tests/**/*.js'",
+    "build": "./node_modules/.bin/babel -d lib/ src/"
   },
   "repository": {
     "type": "git",
@@ -23,6 +22,8 @@
   "author": "Dan Bahrami <dan.bahrami@googlemail.com> (http://danbahrami.io/)",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
     "tape": "^4.6.0"
   }
 }
