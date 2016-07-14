@@ -1,14 +1,7 @@
 import stripWhiteSpace from "./stripWhiteSpace"
 import templates from "./templates"
 
-/**
- * card.getTemplate
- *
- * @param {string|number} number - A card number
- *
- * @returns {object} The matching template as found in templates.js
- */
-const getTemplate = number => {
+const byNumber = number => {
     if(!number) {
         return null
     }
@@ -18,4 +11,11 @@ const getTemplate = number => {
     return templates.find((template) => template.pattern.test(number))
 }
 
-export default getTemplate
+const byType = type => {
+    return templates.find((template) => template.type === type)
+}
+
+export default {
+    byNumber,
+    byType
+}

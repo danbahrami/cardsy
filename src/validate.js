@@ -17,7 +17,7 @@ import luhnCheck from "./utils/luhnCheck"
  */
 const number = number => {
     number = stripWhiteSpace(number)
-    const template = getTemplate(number)
+    const template = getTemplate.byNumber(number)
 
     // Did we find a matching template?
     if(!template) {
