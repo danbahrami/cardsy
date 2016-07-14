@@ -6,7 +6,7 @@ test("card.validate.number should validate number length", assert => {
     let isTooShortValid, isTooLongValid, isJustRightValid
     let tooShort = "5454 5454 5454 545"
     let tooLong = "5454 5454 5454 5454 5"
-    let justRight = "5454 5454 5454 5454 5"
+    let justRight = "5454 5454 5454 5454"
 
     //Act
     isTooShortValid = validate.number(tooShort)
