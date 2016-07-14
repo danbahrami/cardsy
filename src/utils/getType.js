@@ -1,9 +1,11 @@
 import getTemplate from "./getTemplate"
 
 /**
- * GetType
+ * card.getType
+ * 
  * @param {string|number} number - A card number
- * @returns {string}
+ *
+ * @returns {string} The matching card type as found in template.js
  */
 const getType = number => {
     const template = getTemplate(number)

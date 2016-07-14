@@ -2,9 +2,11 @@ import stripWhiteSpace from "./stripWhiteSpace"
 import templates from "./templates"
 
 /**
- * GetTemplate
+ * card.getTemplate
+ *
  * @param {string|number} number - A card number
- * @returns {object}
+ *
+ * @returns {object} The matching template as found in templates.js
  */
 const getTemplate = number => {
     if(!number) {
