@@ -1,5 +1,5 @@
 import test from "tape"
-import validate from "../../src/validate"
+import validate from "../../../src/validate"
 
 test("card.validate.number should perform Luhn check", assert => {
     //Arrange
