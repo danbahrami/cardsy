@@ -1,23 +1,24 @@
 {
-  "name": "credit-card-utilities",
+  "name": "cardsy",
   "version": "0.1.0",
   "description": "A small functional library for validating and formatting Credit/Debit cards.",
-  "main": "lib/index.js",
+  "main": "lib/cardsy.js",
   "scripts": {
     "test": "node_modules/.bin/tape -r babel-core/register 'tests/**/*.js'",
     "build": "./node_modules/.bin/babel -d lib/ src/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/danbahrami/credit-card-utilities.git"
+    "url": "git://github.com/danbahrami/cardsy.git"
   },
   "keywords": [
+    "cardsy",
+    "cards",
     "credit cards",
+    "debit cards",
     "payment",
     "validation",
-    "formatting",
-    "javascript",
-    "js"
+    "formatting"
   ],
   "author": "Dan Bahrami <dan.bahrami@googlemail.com> (http://danbahrami.io/)",
   "license": "MIT",

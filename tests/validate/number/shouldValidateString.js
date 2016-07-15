@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.number should validate string", assert => {
+test("cardsy.validate.number should validate string", assert => {
     //Arrange
     let validNumberType, invalidNumberType
     let validVisaNumber = "4242424242424242"

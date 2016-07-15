@@ -4,7 +4,7 @@ import getTemplate from "./utils/getTemplate"
 import luhnCheck from "./utils/luhnCheck"
 
 /**
- * card.validate.number
+ * cardsy.validate.number
  *
  * Accepts a card number as a string or integer and returns a boolean
  * value for isValid based on whether it matches a card type, is a
@@ -40,7 +40,7 @@ const number = number => {
 }
 
 /**
- * card.validate.expiry
+ * cardsy.validate.expiry
  *
  * Accepts an expiry month and year and returns a boolean
  * value for isValid based on if the month and year
@@ -53,7 +53,7 @@ const number = number => {
  */
 const expiry = (month, year) => {
     // Are all parameters present?
-    if(!month || !year) {
+    if (!month || !year) {
         return false
     }
 
@@ -61,7 +61,7 @@ const expiry = (month, year) => {
     year = year.toString()
 
     // Are month and year numeric strings?
-    if(!isNumeric(month) || !isNumeric(year)) {
+    if (!isNumeric(month) || !isNumeric(year)) {
         return false
     }
 
@@ -69,12 +69,12 @@ const expiry = (month, year) => {
     //
     // p.s. if any payment providers ever adopt the International Fixed
     // Calendar we may need another library that can handle 13 months
-    if(parseInt(month) > 12 || parseInt(month) <= 0) {
+    if (parseInt(month) > 12 || parseInt(month) <= 0) {
         return false
     }
 
     // Is the year a valid length?
-    if(!(year.length === 2 || year.length === 4)) {
+    if (!(year.length === 2 || year.length === 4)) {
         return false
     }
 
@@ -86,12 +86,11 @@ const expiry = (month, year) => {
     }
 
     const now = new Date;
-
     let expiry = new Date(year, month)
     expiry.setMonth(expiry.getMonth(), 1)
 
     //Is the given date in the past?
-    if(expiry <= now) {
+    if (expiry <= now) {
         return false
     }
 
@@ -100,7 +99,7 @@ const expiry = (month, year) => {
 }
 
 /**
- * card.validate.cvc
+ * cardsy.validate.cvc
  *
  * Accepts a CVC code and card type and returns a boolean value
  * for isValid based on if the CVC is numerical and if it is
@@ -116,12 +115,12 @@ const cvc = (cvc, type) => {
     const template = getTemplate.byType(type)
 
     //Are our parameters present and correct?
-    if(!cvc || !isNumeric(cvc) || !template) {
+    if (!cvc || !isNumeric(cvc) || !template) {
         return false
     }
 
     //Is the cvc a valid length?
-    if(template.cvcLengths.indexOf(cvc.length) === -1) {
+    if (template.cvcLengths.indexOf(cvc.length) === -1) {
         return false
     }
 

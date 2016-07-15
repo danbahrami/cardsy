@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.expiry should validate integers", assert => {
+test("cardsy.validate.expiry should validate integers", assert => {
     //Arrange
     let isValid
     const month = 6

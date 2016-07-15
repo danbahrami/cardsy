@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.expiry should reject invalid year values", assert => {
+test("cardsy.validate.expiry should reject invalid year values", assert => {
     //Arrange
     let isTooLongYearValid, isNegativeYearValid
     const month = 6

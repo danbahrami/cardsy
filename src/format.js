@@ -1,12 +1,12 @@
 /**
- * card.format.number
+ * cardsy.format.number
  *
  * Accepts a card number as a string or integer and returns a new string
  * with any non-numeric characters stripped and with whitespace added
  * in the appropriate places if there's a matching card type.
  *
  * @param {string|number} number - A card number
- * 
+ *
  * @returns {string} The formatted card number
  */
 const number = number => {
@@ -14,7 +14,7 @@ const number = number => {
 }
 
 /**
- * card.format.cvc
+ * cardsy.format.cvc
  *
  * Accepts a card security code (CVC) as a string or integer
  * and returns a new string with any non-number characters
@@ -29,7 +29,7 @@ const cvc = cvc => {
 }
 
 /**
- * card.format.expiry
+ * cardsy.format.expiry
  *
  * Accepts an expiry month and year as strings or integers and formats them
  * based on the pattern provided. The pattern must contain exactly 2 m's

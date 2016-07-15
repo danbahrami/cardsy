@@ -2,7 +2,7 @@ import stripWhiteSpace from "./stripWhiteSpace"
 import templates from "./templates"
 
 const byNumber = number => {
-    if(!number) {
+    if (!number) {
         return null
     }
 

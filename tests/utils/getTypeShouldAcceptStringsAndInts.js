@@ -1,7 +1,7 @@
 import test from "tape"
 import getType from "../../src/utils/getType"
 
-test("card.getType should accepts strings and integers", assert => {
+test("cardsy.getType should accepts strings and integers", assert => {
     //Arrange
     let stringType, intType
     let numberAsString = "4242"

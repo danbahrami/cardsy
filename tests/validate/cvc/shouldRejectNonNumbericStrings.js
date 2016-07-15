@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.cvc should return false if cvc is a non-numeric string", assert => {
+test("cardsy.validate.cvc should return false if cvc is a non-numeric string", assert => {
     //Arrange
     let isEmptyValid, isWhiteSpaceValid, isAlphaValid
     let type = "VISA"

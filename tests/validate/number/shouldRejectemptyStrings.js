@@ -1,10 +1,10 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.number should return false if number is an empty string or whitespace", assert => {
+test("cardsy.validate.number should return false if number is an empty string or whitespace", assert => {
     //Arrange
     let isEmptyValid, isWhiteSpaceValid
-    
+
     //Act
     isEmptyValid = validate.number("")
     isWhiteSpaceValid = validate.number(" ")

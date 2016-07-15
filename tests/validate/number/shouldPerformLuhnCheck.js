@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.number should perform Luhn check", assert => {
+test("cardsy.validate.number should perform Luhn check", assert => {
     //Arrange
     let isValid
     let invalidVisaNumber = "4242 4242 4242 4243"

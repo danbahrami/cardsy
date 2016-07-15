@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.expiry should reject dates in the past", assert => {
+test("cardsy.validate.expiry should reject dates in the past", assert => {
     //Arrange
     let isPastMonthValid, isPastYearValid
     const now = new Date()

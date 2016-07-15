@@ -1,7 +1,7 @@
 import test from "tape"
 import validate from "../../../src/validate"
 
-test("card.validate.cvc should validate string", assert => {
+test("cardsy.validate.cvc should validate string", assert => {
     //Arrange
     let isValid
     let cvc = "123"

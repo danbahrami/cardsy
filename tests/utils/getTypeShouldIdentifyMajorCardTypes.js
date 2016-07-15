@@ -1,7 +1,7 @@
 import test from "tape"
 import getType from "../../src/utils/getType"
 
-test("card.getType should identify major card types", assert => {
+test("cardsy.getType should identify major card types", assert => {
     //Arrange
     let amex,
         dankort,
