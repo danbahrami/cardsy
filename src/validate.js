@@ -1,7 +1,5 @@
-import stripWhiteSpace from "./utils/stripWhiteSpace"
-import isNumeric from "./utils/isNumeric"
-import getTemplate from "./utils/getTemplate"
-import luhnCheck from "./utils/luhnCheck"
+import card from "./utils/cardUtils"
+import string from "./utils/stringUtils"
 
 /**
  * cardsy.validate.number
@@ -17,8 +15,8 @@ import luhnCheck from "./utils/luhnCheck"
  * @returns {boolean} Is card number valid
  */
 const number = number => {
-    number = stripWhiteSpace(number)
-    const template = getTemplate.byNumber(number)
+    number = string.stripWhiteSpace(number)
+    const template = card.getTemplate.byNumber(number)
 
     // Did we find a matching template?
     if (!template) {
@@ -31,7 +29,7 @@ const number = number => {
     }
 
     // Does the number pass Luhn check if required?
-    if (template.luhn && !luhnCheck(number)) {
+    if (template.luhn && !card.luhnCheck(number)) {
         return false
     }
 
@@ -61,7 +59,7 @@ const expiry = (month, year) => {
     year = year.toString()
 
     // Are month and year numeric strings?
-    if (!isNumeric(month) || !isNumeric(year)) {
+    if (!string.isNumeric(month) || !string.isNumeric(year)) {
         return false
     }
 
@@ -111,11 +109,11 @@ const expiry = (month, year) => {
  * @returns {boolean} Is CVC code valid
  */
 const cvc = (cvc, type) => {
-    cvc = stripWhiteSpace(cvc)
-    const template = getTemplate.byType(type)
+    cvc = string.stripWhiteSpace(cvc)
+    const template = card.getTemplate.byType(type)
 
     //Are our parameters present and correct?
-    if (!cvc || !isNumeric(cvc) || !template) {
+    if (!cvc || !string.isNumeric(cvc) || !template) {
         return false
     }
 

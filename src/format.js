@@ -1,7 +1,5 @@
-import stripWhiteSpace from "./utils/stripWhiteSpace"
-import getNumericString from "./utils/getNumericString"
-import insertSpaces from "./utils/insertSpaces"
-import getTemplate from "./utils/getTemplate"
+import card from "./utils/cardUtils"
+import string from "./utils/stringUtils"
 
 /**
  * cardsy.format.number
@@ -17,8 +15,8 @@ import getTemplate from "./utils/getTemplate"
 const number = number => {
     let template, maxLength
     
-    number = getNumericString(number);
-    template = getTemplate.byNumber(number)
+    number = string.stripNonNumeric(number);
+    template = card.getTemplate.byNumber(number)
 
     if(!template) {
         return number
@@ -26,7 +24,7 @@ const number = number => {
 
     maxLength = template.lengths[template.lengths.length - 1] + template.spaces.length;
 
-    number = insertSpaces(number, template.spaces);
+    number = string.insertSpaces(number, template.spaces);
     number = number.substr(0, maxLength)
 
     return number;

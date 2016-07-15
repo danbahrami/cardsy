@@ -1,5 +1,5 @@
 import test from "tape"
-import getType from "../../src/utils/getType"
+import card from "../../src/utils/cardUtils"
 
 test("cardsy.getType should accepts strings and integers", assert => {
     //Arrange
@@ -8,8 +8,8 @@ test("cardsy.getType should accepts strings and integers", assert => {
     let numberAsInt = 4242
 
     //Act
-    stringType = getType(numberAsString)
-    intType = getType(numberAsInt)
+    stringType = card.getType(numberAsString)
+    intType = card.getType(numberAsInt)
 
     //Assert
     assert.equal(stringType, "VISA", "Returns correct type for strings")

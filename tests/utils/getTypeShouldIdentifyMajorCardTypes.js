@@ -1,5 +1,5 @@
 import test from "tape"
-import getType from "../../src/utils/getType"
+import card from "../../src/utils/cardUtils"
 
 test("cardsy.getType should identify major card types", assert => {
     //Arrange
@@ -16,17 +16,17 @@ test("cardsy.getType should identify major card types", assert => {
         visa
 
     //Act
-    amex = getType("34")
-    dankort = getType("5019")
-    dinersclub = getType("3000")
-    discover = getType("6011")
-    jcb = getType("3528")
-    laser = getType("6706")
-    maestro = getType("6759")
-    mastercard = getType("5454")
-    unionpay = getType("62")
-    visaelectron = getType("4026")
-    visa = getType("4")
+    amex = card.getType("34")
+    dankort = card.getType("5019")
+    dinersclub = card.getType("3000")
+    discover = card.getType("6011")
+    jcb = card.getType("3528")
+    laser = card.getType("6706")
+    maestro = card.getType("6759")
+    mastercard = card.getType("5454")
+    unionpay = card.getType("62")
+    visaelectron = card.getType("4026")
+    visa = card.getType("4")
 
     //Assert
     assert.equal(amex, "AMEX", "Identifies American Express")
