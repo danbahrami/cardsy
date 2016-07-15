@@ -1,4 +1,5 @@
 import stripWhiteSpace from "./utils/stripWhiteSpace"
+import isNumeric from "./utils/isNumeric"
 import getTemplate from "./utils/getTemplate"
 import luhnCheck from "./utils/luhnCheck"
 
@@ -67,7 +68,21 @@ const expiry = (month, year) => {
  * @returns {boolean} Is CVC code valid
  */
 const cvc = (cvc, type) => {
+    cvc = stripWhiteSpace(cvc)
+    const template = getTemplate.byType(type)
 
+    //Are our parameters present and correct?
+    if(!cvc || !isNumeric(cvc) || !template) {
+        return false
+    }
+
+    //Is the cvc a valid length?
+    if(template.cvcLengths.indexOf(cvc.length) === -1) {
+        return false
+    }
+
+    //OK!
+    return true
 }
 
 export default {
