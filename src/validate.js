@@ -12,7 +12,7 @@ import luhnCheck from "./utils/luhnCheck"
  * https://en.wikipedia.org/wiki/Luhn_algorithm
  *
  * @param {string|number} number - A card number
- * 
+ *
  * @returns {boolean} Is card number valid
  */
 const number = number => {
@@ -20,17 +20,17 @@ const number = number => {
     const template = getTemplate.byNumber(number)
 
     // Did we find a matching template?
-    if(!template) {
+    if (!template) {
         return false
     }
 
     // Is the number a valid length for it's type?
-    if(template.lengths.indexOf(number.length) === -1) {
+    if (template.lengths.indexOf(number.length) === -1) {
         return false
     }
 
     // Does the number pass Luhn check if required?
-    if(template.luhn && !luhnCheck(number)) {
+    if (template.luhn && !luhnCheck(number)) {
         return false
     }
 
@@ -51,7 +51,7 @@ const number = number => {
  * @returns {boolean} Is card expiry valid
  */
 const expiry = (month, year) => {
-    
+
 }
 
 /**
@@ -63,7 +63,7 @@ const expiry = (month, year) => {
  *
  * @param {string|number} cvc - A card CVC security code
  * @param {string} type - The card type as it appears in utils/templates.js
- * 
+ *
  * @returns {boolean} Is CVC code valid
  */
 const cvc = (cvc, type) => {
