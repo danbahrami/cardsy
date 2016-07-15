@@ -1,3 +1,8 @@
+import stripWhiteSpace from "./utils/stripWhiteSpace"
+import getNumericString from "./utils/getNumericString"
+import insertSpaces from "./utils/insertSpaces"
+import getTemplate from "./utils/getTemplate"
+
 /**
  * cardsy.format.number
  *
@@ -10,7 +15,21 @@
  * @returns {string} The formatted card number
  */
 const number = number => {
+    let template, maxLength
+    
+    number = getNumericString(number);
+    template = getTemplate.byNumber(number)
 
+    if(!template) {
+        return number
+    }
+
+    maxLength = template.lengths[template.lengths.length - 1] + template.spaces.length;
+
+    number = insertSpaces(number, template.spaces);
+    number = number.substr(0, maxLength)
+
+    return number;
 }
 
 /**
