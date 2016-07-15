@@ -90,7 +90,13 @@ const expiry = (month, year) => {
     let expiry = new Date(year, month)
     expiry.setMonth(expiry.getMonth(), 1)
 
-    return expiry > now;
+    //Is the given date in the past?
+    if(expiry <= now) {
+        return false
+    }
+
+    //OK!
+    return true
 }
 
 /**
