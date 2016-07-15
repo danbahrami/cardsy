@@ -52,7 +52,45 @@ const number = number => {
  * @returns {boolean} Is card expiry valid
  */
 const expiry = (month, year) => {
+    // Are all parameters present?
+    if(!month || !year) {
+        return false
+    }
 
+    month = month.toString()
+    year = year.toString()
+
+    // Are month and year numeric strings?
+    if(!isNumeric(month) || !isNumeric(year)) {
+        return false
+    }
+
+    // Is it a valid month?
+    //
+    // p.s. if any payment providers ever adopt the International Fixed
+    // Calendar we may need another library that can handle 13 months
+    if(parseInt(month) > 12 || parseInt(month) <= 0) {
+        return false
+    }
+
+    // Is the year a valid length?
+    if(!(year.length === 2 || year.length === 4)) {
+        return false
+    }
+
+    // If the year is 2 digits create a 4 digit year using current century prefix
+    if (year.length === 2) {
+        let prefix = (new Date).getFullYear()
+        prefix = prefix.toString().slice(0, 2)
+        year = prefix + year
+    }
+
+    const now = new Date;
+
+    let expiry = new Date(year, month)
+    expiry.setMonth(expiry.getMonth(), 1)
+
+    return expiry > now;
 }
 
 /**
