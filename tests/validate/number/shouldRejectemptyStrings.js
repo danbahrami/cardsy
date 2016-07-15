@@ -3,15 +3,15 @@ import validate from "../../../src/validate"
 
 test("card.validate.number should return false if number is an empty string or whitespace", assert => {
     //Arrange
-    let emptyType, whiteSpaceType
+    let isEmptyValid, isWhiteSpaceValid
     
     //Act
-    emptyType = validate.number("")
-    whiteSpaceType = validate.number(" ")
+    isEmptyValid = validate.number("")
+    isWhiteSpaceValid = validate.number(" ")
 
     //Assert
-    assert.equal(emptyType, false, "Returns false if empty string is passed")
-    assert.equal(whiteSpaceType, false, "Returns false if white space is passed")
+    assert.equal(isEmptyValid, false, "Returns false if empty string is passed")
+    assert.equal(isWhiteSpaceValid, false, "Returns false if white space is passed")
 
     assert.end()
 })
