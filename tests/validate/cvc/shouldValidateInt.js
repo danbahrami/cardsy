@@ -3,6 +3,7 @@ import validate from "../../../src/validate"
 
 test("card.validate.cvc should validate int", assert => {
     //Arrange
+    let isValid
     let cvc = 123
     let type = "VISA"
 

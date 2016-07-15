@@ -15,8 +15,8 @@ test("card.validate.cvc should validate cvc length", assert => {
     isJustRightValid = validate.cvc(justRight, type)
 
     //Assert
-    assert.equal(isTooShortValid, true, "Returns false if the cvc is too short")
-    assert.equal(isTooLongValid, true, "Returns false if the cvc is too long")
+    assert.equal(isTooShortValid, false, "Returns false if the cvc is too short")
+    assert.equal(isTooLongValid, false, "Returns false if the cvc is too long")
     assert.equal(isJustRightValid, true, "Returns true if the cvc is the right length")
 
     assert.end()
