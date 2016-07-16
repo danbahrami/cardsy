@@ -51,17 +51,17 @@ const cvc = cvc => {
 /**
  * cardsy.format.expiry
  *
- * Accepts an expiry month and year as strings or integers and formats them
- * based on the pattern provided. The pattern must contain exactly 2 m's
- * and either 2 or 4 y's (to resolve, for example, to "16" or "2016").
+ * Accepts an expiry month and year as strings or integers, formats
+ * them to two digit strings and adds a separator between them.
+ * The separator is only added if a value is passed as year.
  *
  * @param {string|number} month - Card expiry date month
  * @param {string|number} year - Card expiry year as either 2 or 4 digits (16 or 2016)
- * @param {string} [format=mm / yy] - The pattern you want the string formatted to
+ * @param {string} [separator= / ] - The string that separates month and year
  *
  * @returns {string} The formatted Expiry date
  */
-const expiry = (month, year, format = "mm / yy") => {
+const expiry = (month, year, separator = " / ") => {
 
 }
 
