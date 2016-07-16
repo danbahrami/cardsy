@@ -42,7 +42,10 @@ const number = number => {
  * @returns {string} The formatted CVC code
  */
 const cvc = cvc => {
+    cvc = string.stripNonNumeric(cvc);
+    cvc = string.trimToLength(cvc, 4);
 
+    return cvc;
 }
 
 /**
