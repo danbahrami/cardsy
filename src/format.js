@@ -80,6 +80,58 @@ const expiry = (month, year, separator = " / ") => {
     return month + separator + year
 }
 
+/**
+ * cardsy.format.expiry.month
+ *
+ * Accepts an expiry month as a string or integer and returns
+ * a two character string description of that month. Any
+ * month that can be described in a single digit gets
+ * prefixed with a zero For example "3" => "03".
+ *
+ * @param {string|number} month - Card expiry date month
+ *
+ * @returns {string} The formatted expiry month
+ */
+expiry.month = (month) => {
+
+}
+
+/**
+ * cardsy.format.expiry.year
+ *
+ * Accepts an expiry year as a string or integer and returns a
+ * two character string description of that year. The year
+ * passed must be in a 2 digit or four digit format.
+ *
+ * @param {string|number} year - Card expiry date year
+ *
+ * @returns {string} The formatted expiry year
+ */
+expiry.year = (year) => {
+
+}
+
+/**
+ * cardsy.format.expiry.fromString
+ *
+ * Accepts a potentially incomplete string in the format of `mm${separator}yy`
+ * and attempts to formatted it to `mm${separator}yy`. If a 2 digit month
+ * is passed as expiry, the return will be expiry + separator. If a
+ * month and a part of the separator is passed it will remove the
+ * incomplete separator string and only return the month.
+ *
+ * This method is meant to be used for accepting the string value
+ * of an input and formatting the input value as the user types.
+ *
+ * @param {string} expiry
+ * @param {string} [separator= / ] - The string that separates month and year
+ *
+ * @returns {string}
+ */
+expiry.fromString = (expiry, separator = " / ") => {
+
+}
+
 export default {
     cvc,
     expiry,
