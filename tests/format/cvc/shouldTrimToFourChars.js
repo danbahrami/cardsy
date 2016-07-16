@@ -10,7 +10,7 @@ test("cardsy.format.cvc should trim cvc to a maximum of 4 characters", assert =>
     formattedCvc = format.cvc(tooLong)
 
     //Assert
-    assert.equal(formattedCvc, "12345", "Trims cvc to a maximum of 4 characters")
+    assert.equal(formattedCvc, "1234", "Trims cvc to a maximum of 4 characters")
 
     assert.end()
 })
