@@ -62,7 +62,20 @@ const cvc = cvc => {
  * @returns {string} The formatted Expiry date
  */
 const expiry = (month, year, separator = " / ") => {
+    month = string.stripNonNumeric(month)
+    year = string.stripNonNumeric(year)
 
+    if(parseInt(month[0]) > 1) {
+        month = "0" + month
+    }
+
+    if(!year) {
+        return month
+    }
+
+    year = year.slice(-2)
+
+    return month + separator + year
 }
 
 export default {
