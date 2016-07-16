@@ -12,22 +12,24 @@ import string from "./utils/stringUtils"
  *
  * @returns {string} The formatted card number
  */
-const number = number => {
+const number = (number) => {
     let template, maxLength
     
-    number = string.stripNonNumeric(number);
+    number = string.stripNonNumeric(number)
     template = card.getTemplate.byNumber(number)
 
     if(!template) {
         return number
     }
 
-    maxLength = template.lengths[template.lengths.length - 1] + template.spaces.length;
+    const { lengths, spaces } = template
 
-    number = string.insertSpaces(number, template.spaces);
+    maxLength = lengths[lengths.length - 1] + spaces.length
+
+    number = string.insertSpaces(number, spaces)
     number = number.substr(0, maxLength)
 
-    return number;
+    return number
 }
 
 /**
@@ -42,10 +44,10 @@ const number = number => {
  * @returns {string} The formatted CVC code
  */
 const cvc = cvc => {
-    cvc = string.stripNonNumeric(cvc);
-    cvc = string.trimToLength(cvc, 4);
+    cvc = string.stripNonNumeric(cvc)
+    cvc = string.trimToLength(cvc, 4)
 
-    return cvc;
+    return cvc
 }
 
 /**

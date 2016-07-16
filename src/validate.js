@@ -14,7 +14,7 @@ import string from "./utils/stringUtils"
  *
  * @returns {boolean} Is card number valid
  */
-const number = number => {
+const number = (number) => {
     number = string.stripWhiteSpace(number)
     const template = card.getTemplate.byNumber(number)
 
