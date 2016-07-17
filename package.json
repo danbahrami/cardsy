@@ -5,7 +5,7 @@
   "main": "lib/cardsy.js",
   "scripts": {
     "test": "node_modules/.bin/tape -r babel-core/register 'tests/**/*.js'",
-    "build": "./node_modules/.bin/babel -d lib/ src/"
+    "build": "rm -rf ./lib && ./node_modules/.bin/babel -d lib/ src/"
   },
   "repository": {
     "type": "git",
