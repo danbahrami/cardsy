@@ -110,7 +110,7 @@ const luhnCheck = (number) => {
     return sum % 10 === 0
 }
 
-export default {
+module.exports = {
     getTemplate : {
         byNumber : getTemplateByNumber,
         byType : getTemplateByType

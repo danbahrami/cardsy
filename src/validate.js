@@ -126,7 +126,7 @@ const cvc = (cvc, type) => {
     return true
 }
 
-export default {
+module.exports = {
     cvc,
     expiry,
     number

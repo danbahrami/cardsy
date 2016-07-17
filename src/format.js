@@ -122,7 +122,7 @@ const expiryString = (expiry, separator = " / ") => {
     return formattedExpiry
 }
 
-export default {
+module.exports = {
     cvc,
     expiry,
     expiryString,

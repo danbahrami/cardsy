@@ -1,4 +1,4 @@
-export default [
+const templates = [
     {
         type       : "AMEX",
         pattern    : /^3[47]/,
@@ -88,3 +88,5 @@ export default [
         luhn       : true
     }
 ]
+
+module.exports = templates

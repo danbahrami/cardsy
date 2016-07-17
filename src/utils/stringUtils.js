@@ -36,7 +36,7 @@ const trimToLength = (value, length) => {
     return value.substr(0, length)
 }
 
-export default {
+module.exports = {
     contains,
     containsPartOf,
     insertSpaces,
