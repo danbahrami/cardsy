@@ -1,5 +1,15 @@
-const trimToLength = (value, length) => {
-    return value.substr(0, length)
+const contains = (haystack, needle) => {
+    return haystack.indexOf(needle) !== -1
+}
+
+const containsPartOf = (haystack, needle) => {
+    for (let char of needle.split("")) {
+        if(contains(haystack, char)) {
+            return true
+        }
+    }
+
+    return false
 }
 
 const insertSpaces = (value, spaces = []) => {
@@ -10,22 +20,28 @@ const insertSpaces = (value, spaces = []) => {
     return value.trim()
 }
 
-const stripWhiteSpace = (value) => {
-    return value.toString().replace(/ /g, "")
+const isNumeric = (value) => {
+    return /^\d+$/.test(value)
 }
 
 const stripNonNumeric = (value) => {
     return value.toString().replace(/\D+/g, "")
 }
 
-const isNumeric = (value) => {
-    return /^\d+$/.test(value)
+const stripWhiteSpace = (value) => {
+    return value.toString().replace(/ /g, "")
+}
+
+const trimToLength = (value, length) => {
+    return value.substr(0, length)
 }
 
 export default {
-    trimToLength,
+    contains,
+    containsPartOf,
     insertSpaces,
-    stripWhiteSpace,
+    isNumeric,
     stripNonNumeric,
-    isNumeric
+    stripWhiteSpace,
+    trimToLength
 }

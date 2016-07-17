@@ -79,22 +79,47 @@ const expiry = (month, year, separator = " / ") => {
 /**
  * cardsy.format.expiryString
  *
- * Accepts a potentially incomplete string in the format of `mm${separator}yy`
- * and attempts to formatted it to `mm${separator}yy`. If a 2 digit month
- * is passed as expiry, the return will be expiry + separator. If a
- * month and a part of the separator is passed it will remove the
- * incomplete separator string and only return the month.
+ * Accepts a potentially incomplete string in the format `mm${separator}yy`
+ * and attempts to formatted it to `mm${separator}yy`. If a two digit
+ * month is passed as expiry, the return will be `mm${separator}`.
+ * If part of the separator is removed from the expiry string it
+ * will return only the first digit of the month.
  *
  * This method is meant to be used for accepting the string value
  * of an input and formatting the input value as the user types.
  *
- * @param {string} expiry
+ * @param {string} expiry - An expiry date string in the format `mm${separator}yy`
  * @param {string} [separator= / ] - The string that separates month and year
  *
- * @returns {string}
+ * @returns {string} An expiry string in the format of `mm${separator}yy`
  */
 const expiryString = (expiry, separator = " / ") => {
+    let formattedExpiry, month
 
+    //Start by getting the month
+    formattedExpiry = month = card.getAutoCompleteMonth(
+        string.trimToLength(expiry, 2)
+    )
+
+    //If the month is complete add separator
+    if(formattedExpiry.length === 2) {
+        formattedExpiry = formattedExpiry + separator
+    }
+
+    //If expiry contains separator already, find year and return formatted
+    if(string.contains(expiry, separator)) {
+        let yearIndex = expiry.indexOf(separator) + separator.length
+        let year = expiry.substr(yearIndex, expiry.length - 1)
+        year = string.stripNonNumeric(year)
+        year = string.trimToLength(year, 2)
+        return formattedExpiry + year
+    }
+
+    if(string.containsPartOf(expiry, separator)) {
+        return string.trimToLength(month, 1)
+    }
+
+    return formattedExpiry
 }
 
 export default {
