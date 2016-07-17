@@ -13,7 +13,7 @@ test("cardsy.format.expiryString should strip non-numeric chars from dates", ass
 
     //Assert
     assert.equal(formattedExpiry, "1", "Strips non-numeric chars from month")
-    assert.equal(formattedExpiryWithYear, "1", "Strips non-numeric chars from year")
+    assert.equal(formattedExpiryWithYear, "12 / 19", "Strips non-numeric chars from year")
 
     assert.end()
 })
