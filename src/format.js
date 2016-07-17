@@ -64,12 +64,8 @@ const cvc = cvc => {
  * @returns {string} The formatted Expiry date
  */
 const expiry = (month, year, separator = " / ") => {
-    month = string.stripNonNumeric(month)
+    month = card.getAutoCompleteMonth(month)
     year = string.stripNonNumeric(year)
-
-    if(parseInt(month[0]) > 1) {
-        month = "0" + month
-    }
 
     if(!year) {
         return month
@@ -81,38 +77,7 @@ const expiry = (month, year, separator = " / ") => {
 }
 
 /**
- * cardsy.format.expiry.month
- *
- * Accepts an expiry month as a string or integer and returns
- * a two character string description of that month. Any
- * month that can be described in a single digit gets
- * prefixed with a zero For example "3" => "03".
- *
- * @param {string|number} month - Card expiry date month
- *
- * @returns {string} The formatted expiry month
- */
-expiry.month = (month) => {
-
-}
-
-/**
- * cardsy.format.expiry.year
- *
- * Accepts an expiry year as a string or integer and returns a
- * two character string description of that year. The year
- * passed must be in a 2 digit or four digit format.
- *
- * @param {string|number} year - Card expiry date year
- *
- * @returns {string} The formatted expiry year
- */
-expiry.year = (year) => {
-
-}
-
-/**
- * cardsy.format.expiry.fromString
+ * cardsy.format.expiryString
  *
  * Accepts a potentially incomplete string in the format of `mm${separator}yy`
  * and attempts to formatted it to `mm${separator}yy`. If a 2 digit month
@@ -128,12 +93,13 @@ expiry.year = (year) => {
  *
  * @returns {string}
  */
-expiry.fromString = (expiry, separator = " / ") => {
+const expiryString = (expiry, separator = " / ") => {
 
 }
 
 export default {
     cvc,
     expiry,
+    expiryString,
     number
 }

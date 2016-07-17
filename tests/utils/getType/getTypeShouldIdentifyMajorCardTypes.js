@@ -1,5 +1,5 @@
 import test from "tape"
-import card from "../../src/utils/cardUtils"
+import card from "../../../src/utils/cardUtils"
 
 test("cardsy.getType should identify major card types", assert => {
     //Arrange

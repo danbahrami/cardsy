@@ -28,6 +28,30 @@ const getTemplateByType = (type) => {
     return templates.find((template) => template.type === type)
 }
 
+/**
+ * getAutoCompleteMonth
+ *
+ * Accepts an expiry month as a string or integer and tries
+ * to return a two character string description of that 
+ * month. Any month that can be described in a single 
+ * digit gets prefixed with a zero e.g. "3" => "03"
+ *
+ * @param {string|number} month - Card expiry date month
+ *
+ * @returns {string} The formatted expiry month
+ */
+const getAutoCompleteMonth = (month) => {
+    month = string.stripNonNumeric(month)
+
+    if(parseInt(month[0]) > 1) {
+        month = "0" + month
+    }
+
+    month = string.trimToLength(month, 2)
+
+    return month
+}
+
 const luhnCheck = (number) => {
     let digit
     let odd = true
@@ -54,5 +78,6 @@ export default {
         byType : getTemplateByType
     },
     getType,
+    getAutoCompleteMonth,
     luhnCheck
 }
