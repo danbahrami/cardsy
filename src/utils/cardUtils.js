@@ -42,13 +42,13 @@ const getTemplateByNumber = (number) => {
 /**
  * getTemplateByType (Private)
  *
- * Accepts a card number as a string or an integer and returns the template
- * of the matching card type as found in src/utils/template.js. If the
- * card number matches no card type patterns it returns null.
+ * Accepts a card type as a string and returns the matching
+ * template as found in src/utils/template.js. If the
+ * type passed is not supported it returns null.
  *
  * @param {string} type - A capitalised card type (e.g. "VISA")
  *
- * @returns {object|null} as found in src/utils/template.js
+ * @returns {object|null} The card template as found in src/utils/template.js
  */
 const getTemplateByType = (type) => {
     return templates.find((template) => template.type === type)
