@@ -148,5 +148,6 @@ const cvc = (cvc, type) => {
 module.exports = {
     cvc,
     expiry,
+    expiryString,
     number
 }
