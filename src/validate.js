@@ -97,6 +97,25 @@ const expiry = (month, year) => {
 }
 
 /**
+ * cardsy.validate.expiryString
+ *
+ * Accepts an expiry string in the format of `mm${separator}yy` and returns
+ * a boolean value for isValid based on if the string is in the correct
+ * format and if the month and year resolve to a valid expiry date.
+ *
+ * This method is meant to be used for accepting the string value
+ * of an input and validating if it resolves to a valid expiry.
+ *
+ * @param {string} expiry - an expiry string in the format `mm${separator}yy`
+ * @param {string} separator - the string that separates the month and year
+ *
+ * @returns {boolean} Is expiry string valid
+ */
+const expiryString = (expiry, separator) => {
+
+}
+
+/**
  * cardsy.validate.cvc
  *
  * Accepts a CVC code and card type and returns a boolean value
