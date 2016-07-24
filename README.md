@@ -6,7 +6,18 @@
 
 Cardsy contains a simple api for formatting and validating credit card forms. It was originally based on the functionality of Stripe's [jQuery.payment](https://github.com/stripe/jquery.payment) library but without a dependency on jQuery.
 
-Card types currently supported: American Express, Dankort, Dinersclub, Discover, JCB, Laser, Maestro, Mastercard, Unionpay, Visa, Visaelectron
+Card types currently supported: 
+- American Express
+- Dankort
+- Dinersclub
+- Discover
+- JCB
+- Laser
+- Maestro
+- Mastercard
+- Unionpay
+- Visa
+- Visaelectron
 
 *Note: This library is for client-side validation and building UIs. If this library judges a card to be valid it* **does not** *promise the card will be deemed valid or accepted by any payment providers. Never use this as your only card validation!*
 
