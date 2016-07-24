@@ -23,7 +23,13 @@ Card types currently supported:
 
 ##Usage
 
-To use in your project...
+To use in your project first install it via npm...
+
+```
+npm install cardsy
+```
+
+Then require into your project...
 
 ```
 var cardsy = require("cardsy")
