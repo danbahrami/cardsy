@@ -107,11 +107,11 @@ const expiry = (month, year) => {
  * of an input and validating if it resolves to a valid expiry.
  *
  * @param {string} expiryString - an expiry string in the format `mm${separator}yy`
- * @param {string} separator - the string that separates the month and year
+ * @param {string} [separator= / ] - the string that separates the month and year
  *
  * @returns {boolean} Is expiry string valid
  */
-const expiryString = (expiryString, separator) => {
+const expiryString = (expiryString, separator = " / ") => {
     const parts = expiryString.split(separator)
 
     // Did the string contain three parts with
