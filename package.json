@@ -1,6 +1,6 @@
 {
   "name": "cardsy",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A small functional library for validating and formatting Credit/Debit cards.",
   "main": "lib/cardsy.js",
   "scripts": {
