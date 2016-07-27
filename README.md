@@ -172,4 +172,4 @@ console.log(full_expiry) // "04 / 19"
 cardsy.format.cvc(card_cvc)
 ```
 
-Accepts a card cvc code as a string or a number and returns a string, stripped of all numeric characters and trimmed to 4 characters.
+Accepts a card cvc code as a string or a number and returns a string, stripped of all non-numeric characters and trimmed to 4 characters.
