@@ -1,8 +1,8 @@
-#Cardsy
+# Cardsy
 
 > A small functional Javascript library for validating and formatting Credit and Debit card information.
 
-##Introduction
+## Introduction
 
 Cardsy contains a simple api for formatting and validating credit card forms. It was originally based on the functionality of Stripe's [jQuery.payment](https://github.com/stripe/jquery.payment) library but without a dependency on jQuery.
 
@@ -21,7 +21,7 @@ Card types currently supported:
 
 *Note: This library is for client-side validation and building UIs. If this library judges a card to be valid it* **does not** *promise the card will be deemed valid or accepted by any payment providers. Never use this as your only card validation!*
 
-##Usage
+## Usage
 
 To use in your project first install it via npm...
 
@@ -41,7 +41,7 @@ Using ES6 import syntax...
 import cardsy from "cardsy"
 ```
 
-##cardsy.getType
+## cardsy.getType
 
 ```
 cardsy.getType(card_number)
@@ -51,11 +51,11 @@ Each card type has a pattern that the card number conforms to. This method accep
 
 Most card type patterns can be matched in the first 4 digits of a card number. If the card does not match any pattern it returns null.
 
-##cardsy.validate
+## cardsy.validate
 
 cardsy.validate contains a set of methods for validating card info. This part of the library is for performing inline validation of credit card forms on the fly as the user types. The methods are...
 
-###cardsy.validate.number
+### cardsy.validate.number
 
 ```
 cardsy.validate.number(card_number)
@@ -70,7 +70,7 @@ Accepts a card number as a string or number and returns a boolean value. Returns
 
 Otherwise it returns `false`.
 
-###cardsy.validate.expiry
+### cardsy.validate.expiry
 
 ```
 cardsy.validate.expiry(month, year)
@@ -87,7 +87,7 @@ Returns `true` if the month and year conform to the following conditions...
 
 Otherwise it returns `false`.
 
-###cardsy.validate.expiryString
+### cardsy.validate.expiryString
 
 ```
 cardsy.validate.expiryString(card_expiry, separator = " / ")
@@ -102,7 +102,7 @@ This method is aimed at validating text inputs who's value is in the format of `
 
 Otherwise it returns `false`.
 
-###cardsy.validate.cvc
+### cardsy.validate.cvc
 
 ```
 cardsy.validate.cvc(card_cvc, card_type)
@@ -116,11 +116,11 @@ Accepts a card security (CVC) code as a string or number and a card type (as ret
 
 Otherwise it returns `false`.
 
-##cardsy.format
+## cardsy.format
 
 cardsy.format contains a set of methods for formatting card info. This part of the library is aimed at formatting inputs in credit card forms on the fly as the user types. The methods are...
 
-###cardsy.format.number
+### cardsy.format.number
 
 ```
 cardsy.format.number(card_number)
@@ -138,7 +138,7 @@ Using this method to update the value of a card number text input while the user
 
 If the card number doesn't conform to any card type then no spaces will be inserted in the returned output.
 
-###cardsy.format.expiry
+### cardsy.format.expiry
 
 ```
 cardsy.format.expiry(month, year, separator = " / ")
@@ -146,7 +146,7 @@ cardsy.format.expiry(month, year, separator = " / ")
 
 Accepts an expiry month and year as strings or numbers and a separator as a string and returns a formatted expiry string in the format of `mm{{ separator }}yy`.
 
-###cardsy.format.expiryString
+### cardsy.format.expiryString
 
 ```
 cardsy.format.expiryString(card_expiry, separator = " / ")
@@ -166,7 +166,7 @@ console.log(custom_separator) // "04 ?* "
 console.log(full_expiry) // "04 / 19"
 ```
 
-###cardsy.format.cvc
+### cardsy.format.cvc
 
 ```
 cardsy.format.cvc(card_cvc)
